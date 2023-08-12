@@ -1,34 +1,19 @@
 ﻿using FluentValidation;
-using Microsoft.AspNetCore.Http;
+using MarketManager.Application.UseCases.Addresss.Commands.CreateAddress;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Commands.CreateAddressesType;
 public class CreateAddressCommandValidator : AbstractValidator<CreateAddressCommand>
 {
     public CreateAddressCommandValidator()
     {
-        RuleFor(t => t.AddressTypeId)
-            .NotEmpty()
-            .NotNull()
-            .WithMessage("Address Type id is required.");
-
-        RuleFor(d => d.Name)
+        RuleFor(d => d.City)
             .NotEmpty()
             .MaximumLength(100)
-            .WithMessage("Name is required");
+            .WithMessage("City is required");
 
-        RuleFor(d => d.Description)
+        RuleFor(d => d.Street)
             .NotEmpty()
             .MaximumLength(250)
-            .WithMessage("Description is required");
-
-        RuleFor(d => d.Barcode)
-           .NotEmpty()
-           .MaximumLength(250)
-           .WithMessage("Barcode is required");
-
-        RuleFor(d => d.MeasureType)
-            .IsInEnum()
-            .WithMessage("Invalid MeasureType");
+            .WithMessage("street is required");
     }
-}
 }

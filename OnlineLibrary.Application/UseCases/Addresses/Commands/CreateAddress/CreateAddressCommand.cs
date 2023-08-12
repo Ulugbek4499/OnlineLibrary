@@ -1,7 +1,4 @@
 ﻿using AutoMapper;
-using MarketManager.Application.Common.Interfaces;
-using MarketManager.Domain.Entities;
-using MarketManager.Domain.States;
 using MediatR;
 using OnlineLibrary.Application.Common.Interfaces;
 using OnlineLibrary.Domain.Entites;
