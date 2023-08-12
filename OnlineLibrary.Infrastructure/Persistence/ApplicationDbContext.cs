@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineLibrary.Application
+namespace OnlineLibrary.Infrastructure.Persistence
 {
-    public class GlobalUsings
+    internal class ApplicationDbContext
     {
     }
 }
