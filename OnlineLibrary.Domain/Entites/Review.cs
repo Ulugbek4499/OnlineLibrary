@@ -9,8 +9,8 @@ namespace OnlineLibrary.Domain.Entites
 {
     public class Review:BaseAuditableEntity
     {
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
 
         public int BookId { get; set; }
         public Book Book { get; set; }

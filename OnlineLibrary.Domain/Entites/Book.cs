@@ -14,6 +14,6 @@ namespace OnlineLibrary.Domain.Entites
         public DateTime Published_Date { get; set; }
         public int ISBN { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

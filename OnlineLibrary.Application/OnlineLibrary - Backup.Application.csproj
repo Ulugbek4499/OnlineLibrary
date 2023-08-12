@@ -41,8 +41,9 @@
 
   <ItemGroup>
     <Folder Include="UseCases\Books\" />
-    <Folder Include="UseCases\Clients\" />
+    <Folder Include="UseCases\Addresses\" />
     <Folder Include="UseCases\Reviews\" />
+    <Folder Include="UseCases\Clients\" />
   </ItemGroup>
 
 </Project>
