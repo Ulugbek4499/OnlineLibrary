@@ -39,10 +39,4 @@
 	  <PackageReference Include="X.PagedList" Version="8.4.7" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Books\" />
-    <Folder Include="UseCases\Clients\" />
-    <Folder Include="UseCases\Reviews\" />
-  </ItemGroup>
-
 </Project>

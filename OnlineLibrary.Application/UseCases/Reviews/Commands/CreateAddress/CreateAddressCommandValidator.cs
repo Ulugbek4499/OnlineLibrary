@@ -1,19 +1,15 @@
 ﻿using FluentValidation;
+using OnlineLibrary.Application.UseCases.Addresss.Commands.CreateAddress;
 
-namespace OnlineLibrary.Application.UseCases.Books.Commands.UpdateBook;
-public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.CreateAddressesType;
+public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
 {
-    public UpdateBookCommandValidator()
+    public CreateBookCommandValidator()
     {
-        RuleFor(t => t.Id).NotEmpty()
-           .NotNull()
-           .WithMessage("Book id is required.");
-
         RuleFor(d => d.City)
             .NotEmpty()
             .MaximumLength(100)
             .WithMessage("City is required");
-
 
         RuleFor(d => d.Street)
             .NotEmpty()

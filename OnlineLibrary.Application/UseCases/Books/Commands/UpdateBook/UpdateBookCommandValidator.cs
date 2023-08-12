@@ -9,15 +9,14 @@ public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
            .NotNull()
            .WithMessage("Book id is required.");
 
-        RuleFor(d => d.City)
-            .NotEmpty()
-            .MaximumLength(100)
-            .WithMessage("City is required");
+        RuleFor(d => d.Author)
+             .NotEmpty()
+             .MaximumLength(100)
+             .WithMessage("City is required");
 
-
-        RuleFor(d => d.Street)
-            .NotEmpty()
-            .MaximumLength(250)
-            .WithMessage("street is required");
+        RuleFor(d => d.Title)
+           .NotEmpty()
+           .MaximumLength(100)
+           .WithMessage("City is required");
     }
 }
