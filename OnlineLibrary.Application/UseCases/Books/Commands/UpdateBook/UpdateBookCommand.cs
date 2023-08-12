@@ -9,7 +9,7 @@ namespace OnlineLibrary.Application.UseCases.Books.Commands.UpdateBook;
 
 public class UpdateBookCommand : IRequest
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     public string Title { get; set; }
     public string Author { get; set; }
     public DateTime Published_Date { get; set; }
@@ -32,7 +32,7 @@ public class UpdateBookCommandHandler : IRequestHandler<UpdateBookCommand>
         Book? Book = await _context.Books.FindAsync(request.Id)
            ?? throw new NotFoundException(nameof(Book), request.Id);
 
-        _mapper.Map(Book, request);
+        _mapper.Map(request, Book);
 
         await _context.SaveChangesAsync(cancellationToken);
     }

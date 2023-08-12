@@ -12,15 +12,15 @@ using OnlineLibrary.Infrastructure.Persistence;
 namespace OnlineLibrary.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230812153151_init1")]
-    partial class init1
+    [Migration("20230812181034_init6")]
+    partial class init6
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("AddressVersion", "8.0.0-preview.1.23111.4")
+                .HasAnnotation("ProductVersion", "8.0.0-preview.1.23111.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -52,7 +52,7 @@ namespace OnlineLibrary.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("ClientId")
+                    b.Property<int?>("ClientId")
                         .HasColumnType("integer");
 
                     b.Property<string>("CreatedBy")
@@ -106,6 +106,9 @@ namespace OnlineLibrary.Infrastructure.Migrations
                     b.Property<DateTime>("ModifyDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Published_Date")
                         .HasColumnType("timestamp with time zone");
 
@@ -139,10 +142,6 @@ namespace OnlineLibrary.Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Photo")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -212,9 +211,7 @@ namespace OnlineLibrary.Infrastructure.Migrations
                 {
                     b.HasOne("OnlineLibrary.Domain.Entites.Client", "Client")
                         .WithOne("Address")
-                        .HasForeignKey("OnlineLibrary.Domain.Entites.Address", "ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OnlineLibrary.Domain.Entites.Address", "ClientId");
 
                     b.Navigation("Client");
                 });

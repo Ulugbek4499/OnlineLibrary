@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using OnlineLibrary.Application.Common.Exceptions;
 using OnlineLibrary.Application.Common.Interfaces;
+using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Clients.Commands.UpdateClient
 {
     public class UpdateClientCommand : IRequest
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
     public class UpdateClientCommandHandler : IRequestHandler<UpdateClientCommand>
@@ -32,7 +27,7 @@ namespace OnlineLibrary.Application.UseCases.Clients.Commands.UpdateClient
             Client? client = await _context.Clients.FindAsync(request.Id)
                ?? throw new NotFoundException(nameof(client), request.Id);
 
-            _mapper.Map(client, request);
+            _mapper.Map(request, client);
 
             await _context.SaveChangesAsync(cancellationToken);
         }

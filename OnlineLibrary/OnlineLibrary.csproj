@@ -19,8 +19,4 @@
     <ProjectReference Include="..\OnlineLibrary.Infrastructure\OnlineLibrary.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

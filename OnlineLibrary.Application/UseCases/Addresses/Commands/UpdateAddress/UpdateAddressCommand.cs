@@ -8,7 +8,7 @@ namespace OnlineLibrary.Application.UseCases.Addresses.Commands.UpdateAddress;
 
 public class UpdateAddressCommand : IRequest
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     public int? ClientId { get; set; }
     public string Street { get; set; }
     public string City { get; set; }
@@ -29,7 +29,7 @@ public class UpdateAddressCommandHandler : IRequestHandler<UpdateAddressCommand>
         Address? address = await _context.Addresses.FindAsync(request.Id)
            ?? throw new NotFoundException(nameof(address), request.Id);
 
-        _mapper.Map(address, request);
+        _mapper.Map( request, address);
 
         await _context.SaveChangesAsync(cancellationToken);
     }

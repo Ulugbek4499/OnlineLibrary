@@ -12,8 +12,8 @@ using OnlineLibrary.Infrastructure.Persistence;
 namespace OnlineLibrary.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230812161227_init3")]
-    partial class init3
+    [Migration("20230812174758_init4")]
+    partial class init4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

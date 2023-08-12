@@ -7,9 +7,9 @@ using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Queries.GetByIdAddress;
 
-public record GetByIdAddressQuery(int Id) : IRequest<BookResponse>;
+public record GetByIdAddressQuery(int Id) : IRequest<AddressResponse>;
 
-public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQuery, BookResponse>
+public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQuery, AddressResponse>
 {
     private readonly IMapper _mapper;
     private readonly IApplicationDbContext _context;
@@ -19,11 +19,11 @@ public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQuery, B
         _mapper = mapper;
         _context = context;
     }
-    public async Task<BookResponse> Handle(GetByIdAddressQuery request, CancellationToken cancellationToken)
+    public async Task<AddressResponse> Handle(GetByIdAddressQuery request, CancellationToken cancellationToken)
     {
         var Address = FilterIfAddressExsists(request.Id);
 
-        var result = _mapper.Map<BookResponse>(Address);
+        var result = _mapper.Map<AddressResponse>(Address);
         return result;
     }
 
