@@ -10,7 +10,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Book> Books { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Review> Reviews { get; set; }
-    public DbSet<Client>  Clients { get; set; }
+    public DbSet<Client> Clients { get; set; }
 
     private readonly IConfiguration _configuration;
 

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using OnlineLibrary.Application.Common.Interfaces;
-using OnlineLibrary.Application.UseCases.Addresses.Response;
 using MediatR;
 using OnlineLibrary.Application.Common.Exceptions;
+using OnlineLibrary.Application.Common.Interfaces;
+using OnlineLibrary.Application.UseCases.Addresses.Response;
 using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Queries.GetByIdAddressQuery;
@@ -24,7 +24,7 @@ public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQuery, A
         var Address = FilterIfAddressExsists(request.Id);
 
         var result = _mapper.Map<AddressResponse>(Address);
-        return  result;
+        return result;
     }
 
     private Address FilterIfAddressExsists(int id)

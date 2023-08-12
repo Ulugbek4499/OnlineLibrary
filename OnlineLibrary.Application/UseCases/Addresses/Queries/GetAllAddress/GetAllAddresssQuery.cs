@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using DocumentFormat.OpenXml.Wordprocessing;
-using OnlineLibrary.Application.Common.Interfaces;
-using OnlineLibrary.Application.Common.Models;
-using OnlineLibrary.Application.UseCases.Addresses.Response;
-using OnlineLibrary.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using OnlineLibrary.Application.Common.Interfaces;
+using OnlineLibrary.Application.UseCases.Addresses.Response;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Queries.GetAllAddresses;
 
@@ -24,9 +21,9 @@ public class GetAllAddressesQueryHandler : IRequestHandler<GetAllAddressesQuery,
 
     public async Task<IEnumerable<AddressResponse>> Handle(GetAllAddressesQuery request, CancellationToken cancellationToken)
     {
-        IEnumerable<Address> Addresses = await _context.Addresses.ToListAsync();
+        var Addresses = await _context.Addresses.ToListAsync();
 
-        return Task.FromResult(_mapper.Map<IEnumerable<AddressResponse>>(Addresses));
+        return _mapper.Map<IEnumerable<AddressResponse>>(Addresses);
     }
 }
 

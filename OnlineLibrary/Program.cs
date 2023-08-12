@@ -1,6 +1,3 @@
-using OnlineLibrary.Application;
-using OnlineLibrary.Infrastructure;
-
 namespace OnlineLibrary
 {
     public class Program

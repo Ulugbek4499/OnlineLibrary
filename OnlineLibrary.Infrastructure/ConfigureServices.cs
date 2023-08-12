@@ -18,8 +18,8 @@ public static class ConfigureServices
 
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
-      //  services.AddScoped<AuditableEntitySaveChangesInterceptor>();
-     
+        //  services.AddScoped<AuditableEntitySaveChangesInterceptor>();
+
         return services;
     }
 }

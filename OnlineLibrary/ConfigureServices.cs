@@ -8,12 +8,12 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddApi(this IServiceCollection services, IConfiguration configuration)
     {
-      //  SerilogSettings(configuration);
+        //  SerilogSettings(configuration);
         //services.AddHostedService<BotBackgroundService>();
         //services.AddSingleton<ITelegramBotClient>(
         //    new TelegramBotClient(configuration?.GetConnectionString("TelegramToken")));
         //services.AddTransient<IUpdateHandler, UpdateHandler>();
-       services.AddScoped<ICurrentUserService, CurrentUserService>();
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddControllers().AddJsonOptions(x =>
         {
             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -66,7 +66,7 @@ public static class ConfigureServices
         //        });
 
         //    });
-           return services;
+        return services;
     }
     //public static void SerilogSettings(IConfiguration configuration)
     //{

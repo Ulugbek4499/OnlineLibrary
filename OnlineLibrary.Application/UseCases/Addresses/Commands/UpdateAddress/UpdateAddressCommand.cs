@@ -1,8 +1,8 @@
-﻿using OnlineLibrary.Application.Common.Interfaces;
+﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Http;
-using AutoMapper;
 using OnlineLibrary.Application.Common.Exceptions;
+using OnlineLibrary.Application.Common.Interfaces;
+using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.AddressesType.Commands.UpdateAddress;
 
@@ -26,16 +26,10 @@ public class UpdateAddressCommandHandler : IRequestHandler<UpdateAddressCommand>
 
     public async Task Handle(UpdateAddressCommand request, CancellationToken cancellationToken)
     {
-        Address? address = await _context.Addresss.FindAsync(request.Id);
+        Address? address = await _context.Addresses.FindAsync(request.Id)
+           ?? throw new NotFoundException(nameof(address), request.Id);
+
         _mapper.Map(address, request);
-
-        if (address is null)
-            throw new NotFoundException(nameof(address), request.Id);
-
-        var AddressType = await _context.AddressTypes.FindAsync(request.AddressTypeId);
-
-        if (AddressType is null)
-            throw new NotFoundException(nameof(AddressType), request.AddressTypeId);
 
         await _context.SaveChangesAsync(cancellationToken);
     }

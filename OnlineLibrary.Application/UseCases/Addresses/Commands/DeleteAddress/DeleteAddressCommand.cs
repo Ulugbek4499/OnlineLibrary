@@ -1,14 +1,11 @@
-﻿using OnlineLibrary.Application.Common.Interfaces;
-using OnlineLibrary.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 using OnlineLibrary.Application.Common.Exceptions;
+using OnlineLibrary.Application.Common.Interfaces;
+using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.AddressesType.Commands.DeleteAddress;
 
-public class DeleteAddressCommand : IRequest
-{
-    public int Id { get; set; }
-}
+public record DeleteAddressCommand(int Id) : IRequest;
 
 public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand>
 {
@@ -21,14 +18,12 @@ public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand>
 
     public async Task Handle(DeleteAddressCommand request, CancellationToken cancellationToken)
     {
-        Address address = await _context.Addresses.FindAsync(request.Id);
-        if (address == null)
-        {
-            throw new NotFoundException(nameof(address), request.Id);
-        }
+        Address address = await _context.Addresses.FindAsync(request.Id)
+           ?? throw new NotFoundException(nameof(address), request.Id);
+
         _context.Addresses.Remove(address);
+
         await _context.SaveChangesAsync();
     }
-
 }
 

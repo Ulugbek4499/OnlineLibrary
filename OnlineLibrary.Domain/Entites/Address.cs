@@ -2,7 +2,7 @@
 
 namespace OnlineLibrary.Domain.Entites;
 
-public class Address:BaseAuditableEntity
+public class Address : BaseAuditableEntity
 {
     public int? ClientId { get; set; }
     public Client Client { get; set; }
