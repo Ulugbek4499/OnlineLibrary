@@ -1,23 +1,22 @@
 ﻿using FluentValidation;
 
-namespace OnlineLibrary.Application.UseCases.Books.Commands.UpdateBook;
-public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.UpdateAddress;
+public class UpdateAddressCommandValidator : AbstractValidator<UpdateAddressCommand>
 {
-    public UpdateBookCommandValidator()
+    public UpdateAddressCommandValidator()
     {
         RuleFor(t => t.Id).NotEmpty()
            .NotNull()
-           .WithMessage("Book id is required.");
+           .WithMessage("Address id is required.");
 
         RuleFor(d => d.City)
             .NotEmpty()
             .MaximumLength(100)
             .WithMessage("City is required");
 
-
         RuleFor(d => d.Street)
             .NotEmpty()
             .MaximumLength(250)
-            .WithMessage("street is required");
+            .WithMessage("Street is required");
     }
 }

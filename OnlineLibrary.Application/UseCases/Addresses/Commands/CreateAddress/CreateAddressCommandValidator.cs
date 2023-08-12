@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using MarketManager.Application.UseCases.Addresss.Commands.CreateAddress;
 
-namespace OnlineLibrary.Application.UseCases.Addresses.Commands.CreateAddressesType;
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.CreateAddress;
 public class CreateAddressCommandValidator : AbstractValidator<CreateAddressCommand>
 {
     public CreateAddressCommandValidator()
@@ -10,6 +9,7 @@ public class CreateAddressCommandValidator : AbstractValidator<CreateAddressComm
             .NotEmpty()
             .MaximumLength(100)
             .WithMessage("City is required");
+
 
         RuleFor(d => d.Street)
             .NotEmpty()

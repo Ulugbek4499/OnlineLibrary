@@ -3,7 +3,7 @@ using OnlineLibrary.Application.Common.Exceptions;
 using OnlineLibrary.Application.Common.Interfaces;
 using OnlineLibrary.Domain.Entites;
 
-namespace OnlineLibrary.Application.UseCases.AddressesType.Commands.DeleteAddress;
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.DeleteAddress;
 
 public record DeleteAddressCommand(int Id) : IRequest;
 

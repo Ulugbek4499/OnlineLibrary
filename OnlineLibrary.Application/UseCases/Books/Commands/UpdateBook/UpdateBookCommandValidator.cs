@@ -12,11 +12,11 @@ public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
         RuleFor(d => d.Author)
              .NotEmpty()
              .MaximumLength(100)
-             .WithMessage("City is required");
+             .WithMessage("Author is required");
 
         RuleFor(d => d.Title)
            .NotEmpty()
            .MaximumLength(100)
-           .WithMessage("City is required");
+           .WithMessage("Title is required");
     }
 }

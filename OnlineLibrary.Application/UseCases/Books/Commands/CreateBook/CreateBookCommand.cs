@@ -11,7 +11,7 @@ namespace OnlineLibrary.Application.UseCases.Books.Commands.CreateBook
         public string Title { get; set; }
         public string Author { get; set; }
         public DateTime Published_Date { get; set; }
-        public IFormFile Photo { get; set; }
+        public IFormFile? Photo { get; set; }
         public int ISBN { get; set; }
     }
     public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, int>

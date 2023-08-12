@@ -4,7 +4,7 @@ using OnlineLibrary.Application.Common.Exceptions;
 using OnlineLibrary.Application.Common.Interfaces;
 using OnlineLibrary.Domain.Entites;
 
-namespace OnlineLibrary.Application.UseCases.AddressesType.Commands.UpdateAddress;
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.UpdateAddress;
 
 public class UpdateAddressCommand : IRequest
 {

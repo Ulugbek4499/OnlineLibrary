@@ -3,7 +3,7 @@ using MediatR;
 using OnlineLibrary.Application.Common.Interfaces;
 using OnlineLibrary.Domain.Entites;
 
-namespace MarketManager.Application.UseCases.Addresss.Commands.CreateAddress
+namespace OnlineLibrary.Application.UseCases.Addresses.Commands.CreateAddress
 {
     public class CreateAddressCommand : IRequest<int>
     {

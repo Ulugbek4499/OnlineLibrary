@@ -5,7 +5,7 @@ using OnlineLibrary.Application.Common.Exceptions;
 using OnlineLibrary.Application.Common.Interfaces;
 using OnlineLibrary.Domain.Entites;
 
-namespace OnlineLibrary.Application.UseCases.BookesType.Commands.UpdateBook;
+namespace OnlineLibrary.Application.UseCases.Books.Commands.UpdateBook;
 
 public class UpdateBookCommand : IRequest
 {

@@ -5,9 +5,9 @@ using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.AddressesType.Commands.DeleteAddress;
 
-public record DeleteAddressCommand(int Id) : IRequest;
+public record DeleteBookCommand(int Id) : IRequest;
 
-public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand>
+public class DeleteAddressCommandHandler : IRequestHandler<DeleteBookCommand>
 {
     private readonly IApplicationDbContext _context;
 
@@ -16,7 +16,7 @@ public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand>
         _context = context;
     }
 
-    public async Task Handle(DeleteAddressCommand request, CancellationToken cancellationToken)
+    public async Task Handle(DeleteBookCommand request, CancellationToken cancellationToken)
     {
         Address address = await _context.Addresses.FindAsync(request.Id)
            ?? throw new NotFoundException(nameof(address), request.Id);

@@ -1,7 +1,7 @@
 ﻿using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Response;
-public class AddressResponse
+public class BookResponse
 {
     public int Id { get; set; }
     public string Street { get; set; }
