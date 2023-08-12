@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLibrary.Application
 {
-    internal class ConfigureServices
+    public class ConfigureServices
     {
     }
 }

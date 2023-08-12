@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <Folder Include="Common\Behaviours\" />
     <Folder Include="UseCases\" />
   </ItemGroup>
 

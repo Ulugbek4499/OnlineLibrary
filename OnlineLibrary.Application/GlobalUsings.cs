@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLibrary.Application
 {
-    internal class GlobalUsings
+    public class GlobalUsings
     {
     }
 }
