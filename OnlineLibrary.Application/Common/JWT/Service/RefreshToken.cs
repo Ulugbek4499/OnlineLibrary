@@ -42,7 +42,13 @@ namespace OnlineLibrary.Application.Common.JWT.Service
 
         public ValueTask<User> AuthenAsync(LoginUserCommand user)
         {
-            throw new NotImplementedException();
+            string hashPassword = user.Password.GetHashedString();
+            User? foundUser = await _context.Users.SingleOrDefaultAsync(x => x.Username == user.Username && x.Password == hashPassword);
+            if (foundUser is null)
+            {
+                return null;
+            }
+            return foundUser;
         }
 
         public async ValueTask<bool> DeleteUserRefreshTokens(
