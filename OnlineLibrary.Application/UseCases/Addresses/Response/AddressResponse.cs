@@ -1,5 +1,4 @@
 ﻿using OnlineLibrary.Application.UseCases.Clients.Response;
-using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Addresses.Response;
 public class AddressResponse

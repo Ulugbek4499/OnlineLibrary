@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using OnlineLibrary.Application.UseCases.Books.Commands.CreateBook;
 
 namespace OnlineLibrary.Application.UseCases.Books.Commands.CreateBook;
 public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>

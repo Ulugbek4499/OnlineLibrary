@@ -1,6 +1,5 @@
 ﻿using OnlineLibrary.Application.UseCases.Clients.Response;
 using OnlineLibrary.Application.UseCases.Reviews.Response;
-using OnlineLibrary.Domain.Entites;
 
 namespace OnlineLibrary.Application.UseCases.Books.Response;
 public class BookResponse

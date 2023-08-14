@@ -14,6 +14,6 @@ public class ClientMapping : Profile
         CreateMap<CreateClientCommand, Client>();
         CreateMap<DeleteClientCommand, Client>();
         CreateMap<UpdateClientCommand, Client>();
-        CreateMap<Client,ClientResponse>();
+        CreateMap<Client, ClientResponse>();
     }
 }

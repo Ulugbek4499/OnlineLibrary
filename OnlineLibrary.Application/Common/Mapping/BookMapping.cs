@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using OnlineLibrary.Application.UseCases.Books.Commands.CreateBook;
 using OnlineLibrary.Application.UseCases.Books.Commands.DeleteBook;
 using OnlineLibrary.Application.UseCases.Books.Commands.UpdateBook;
@@ -19,6 +14,6 @@ public class BookMapping : Profile
         CreateMap<CreateBookCommand, Book>();
         CreateMap<DeleteBookCommand, Book>();
         CreateMap<UpdateBookCommand, Book>();
-        CreateMap< Book, BookResponse>();
+        CreateMap<Book, BookResponse>();
     }
 }

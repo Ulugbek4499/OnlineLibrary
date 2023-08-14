@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineLibrary.Domain.Entites.Identity;
 
 namespace OnlineLibrary.Application.Common.JWT.Interfaces
 {
-    internal interface IUserRefreshToken
+    public interface IUserRefreshToken
     {
+        ValueTask<UserRefreshToken> AddOrUpdateRefreshToken(
+            UserRefreshToken refreshToken, CancellationToken cancellationToken = default);
+
+        ValueTask<User> AuthenAsync(LoginUserCommand user);
+        ValueTask<bool> DeleteUserRefreshTokens(
+            string username, string refreshToken, CancellationToken cancellationToken = default);
+
+        ValueTask<UserRefreshToken> GetSavedRefreshTokens(string userName, string refreshToken);
     }
 }

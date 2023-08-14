@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
+using OnlineLibrary.Domain.Commons;
 
 namespace OnlineLibrary.Domain.Entites.Identity
 {
-    internal class Permission
+    public class Permission : BaseAuditableEntity
     {
+        public string Name { get; set; }
+
+        [JsonIgnore]
+        public virtual ICollection<Role>? Roles { get; set; }
     }
 }

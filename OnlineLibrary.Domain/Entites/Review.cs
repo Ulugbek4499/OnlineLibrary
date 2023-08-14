@@ -9,7 +9,7 @@ namespace OnlineLibrary.Domain.Entites
 
         public string Content { get; set; }
         public DateTime PublishedDate { get; set; }
-       
+
         public virtual Client Client { get; set; }
 
         public virtual Book Book { get; set; }

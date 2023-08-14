@@ -29,7 +29,7 @@ public class UpdateAddressCommandHandler : IRequestHandler<UpdateAddressCommand>
         Address? address = await _context.Addresses.FindAsync(request.Id)
            ?? throw new NotFoundException(nameof(address), request.Id);
 
-        _mapper.Map( request, address);
+        _mapper.Map(request, address);
 
         await _context.SaveChangesAsync(cancellationToken);
     }
