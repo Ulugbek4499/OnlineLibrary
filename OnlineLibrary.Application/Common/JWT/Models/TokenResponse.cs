@@ -11,5 +11,4 @@ namespace OnlineLibrary.Application.Common.JWT.Models
         public string? AccessToken { get; set; }
         public string? RefreshToken { get; set; }
     }
-
 }
