@@ -40,7 +40,7 @@ namespace OnlineLibrary.Application.Common.JWT.Service
             }
         }
 
-        public ValueTask<User> AuthenAsync(LoginUserCommand user)
+        public async ValueTask<User> AuthenAsync(LoginUserCommand user)
         {
             string hashPassword = user.Password.GetHashedString();
             User? foundUser = await _context.Users.SingleOrDefaultAsync(x => x.Username == user.Username && x.Password == hashPassword);
